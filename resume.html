@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/resume.css">
+</head>
+
+<body>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav">
+        <tr>
+          <td><img src="images/logo2.png"  height="100" /></td>
+          <td width="100" align="center"><a href="index.html">主页</a></td>
+          <td width="100" align="center"><a href="resume.html">我的成果</a></td>
+          <td width="100" align="center"><a href="photo.html">我的相册</a></td>
+          <td width="100" align="center"><a href="Roll_call.html">随机点名</a></td>
+          <td width="100" align="center"><a href="course.html">我的课程</a></td>
+          <td width="100" align="center"><a href="tools.html">常用工具</a></td>
+        </tr>
+      </table>
+    <header>
+        <h1>天蓝蓝-图表20220105</h1>
+        <div class="showTime"></div>
+    </header>
+    <section class="mainbox">
+        <div class="column">
+            <!-- 列标签 -->
+            <div class="panel bar">
+                <!--柱状图-->
+                <h2>自动化系师资队伍</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2>工资</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- no模块制作 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>11</li>
+                        <li>04</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>发表SCI/EI论文数量</li>
+                        <li>发明专利数量</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图模块 -->
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="map4" id="globe3D"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="./js/showTime.js"></script>
+    <script src="./js/china.js"></script>
+
+    <script type="text/javascript" src="js/echarts-gl.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+  <title>&#24352;&#23792;20220611&#32534;&#20889;</title>
+  <meta name="generator" content="MATLAB 9.11">
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+  <meta name="DC.date" content="2022-06-11">
+  <meta name="DC.source" content="exp2_1_20220611.m">
+  <style type="text/css">
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      background: transparent
+    }
+
+    body {
+      line-height: 1
+    }
+
+    ol,
+    ul {
+      list-style: none
+    }
+
+    blockquote,
+    q {
+      quotes: none
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: '';
+      content: none
+    }
+
+    :focus {
+      outine: 0
+    }
+
+    ins {
+      text-decoration: none
+    }
+
+    del {
+      text-decoration: line-through
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    html {
+      min-height: 100%;
+      margin-bottom: 1px;
+    }
+
+    html body {
+      height: 100%;
+      margin: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      color: #000;
+      line-height: 140%;
+      background: #fff none;
+      overflow-y: scroll;
+    }
+
+    html body td {
+      vertical-align: top;
+      text-align: left;
+    }
+
+    h1 {
+      padding: 0px;
+      margin: 0px 0px 25px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.5em;
+      color: #d55000;
+      line-height: 100%;
+      font-weight: normal;
+    }
+
+    h2 {
+      padding: 0px;
+      margin: 0px 0px 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2em;
+      color: #000;
+      font-weight: bold;
+      line-height: 140%;
+      border-bottom: 1px solid #d6d4d4;
+      display: block;
+    }
+
+    h3 {
+      padding: 0px;
+      margin: 0px 0px 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.1em;
+      color: #000;
+      font-weight: bold;
+      line-height: 140%;
+    }
+
+    a {
+      color: #005fce;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #005fce;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      color: #004aa0;
+      text-decoration: none;
+    }
+
+    p {
+      padding: 0px;
+      margin: 0px 0px 20px;
+    }
+
+    img {
+      padding: 0px;
+      margin: 0px 0px 20px;
+      border: none;
+    }
+
+    p img,
+    pre img,
+    tt img,
+    li img,
+    h1 img,
+    h2 img {
+      margin-bottom: 0px;
+    }
+
+    ul {
+      padding: 0px;
+      margin: 0px 0px 20px 23px;
+      list-style: square;
+    }
+
+    ul li {
+      padding: 0px;
+      margin: 0px 0px 7px 0px;
+    }
+
+    ul li ul {
+      padding: 5px 0px 0px;
+      margin: 0px 0px 7px 23px;
+    }
+
+    ul li ol li {
+      list-style: decimal;
+    }
+
+    ol {
+      padding: 0px;
+      margin: 0px 0px 20px 0px;
+      list-style: decimal;
+    }
+
+    ol li {
+      padding: 0px;
+      margin: 0px 0px 7px 23px;
+      list-style-type: decimal;
+    }
+
+    ol li ol {
+      padding: 5px 0px 0px;
+      margin: 0px 0px 7px 0px;
+    }
+
+    ol li ol li {
+      list-style-type: lower-alpha;
+    }
+
+    ol li ul {
+      padding-top: 7px;
+    }
+
+    ol li ul li {
+      list-style: square;
+    }
+
+    .content {
+      font-size: 1.2em;
+      line-height: 140%;
+      padding: 20px;
+    }
+
+    pre,
+    code {
+      font-size: 12px;
+    }
+
+    tt {
+      font-size: 1.2em;
+    }
+
+    pre {
+      margin: 0px 0px 20px;
+    }
+
+    pre.codeinput {
+      padding: 10px;
+      border: 1px solid #d3d3d3;
+      background: #f7f7f7;
+    }
+
+    pre.codeoutput {
+      padding: 10px 11px;
+      margin: 0px 0px 20px;
+      color: #4c4c4c;
+    }
+
+    pre.error {
+      color: red;
+    }
+
+    @media print {
+
+      pre.codeinput,
+      pre.codeoutput {
+        word-wrap: break-word;
+        width: 100%;
+      }
+    }
+
+    span.keyword {
+      color: #0000FF
+    }
+
+    span.comment {
+      color: #228B22
+    }
+
+    span.string {
+      color: #A020F0
+    }
+
+    span.untermstring {
+      color: #B20000
+    }
+
+    span.syscmd {
+      color: #B28C00
+    }
+
+    span.typesection {
+      color: #A0522D
+    }
+
+    .footer {
+      width: auto;
+      padding: 10px 0px;
+      margin: 25px 0px 0px;
+      border-top: 1px dotted #878787;
+      font-size: 0.8em;
+      line-height: 140%;
+      font-style: italic;
+      color: #878787;
+      text-align: left;
+      float: none;
+    }
+
+    .footer p {
+      margin: 0px;
+    }
+
+    .footer a {
+      color: #878787;
+    }
+
+    .footer a:hover {
+      color: #878787;
+      text-decoration: underline;
+    }
+
+    .footer a:visited {
+      color: #878787;
+    }
+
+    table th {
+      padding: 7px 5px;
+      text-align: left;
+      vertical-align: middle;
+      border: 1px solid #d6d4d4;
+      font-weight: bold;
+    }
+
+    table td {
+      padding: 7px 5px;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid #d6d4d4;
+    }
+  </style>
+</head>
+
+<body>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav">
+    <tr>
+        <td><img src="images/logo2.png" height="50" /></td>
+        <td width="100" align="center"><a href="index.html">主页</a></td>
+        <td width="100" align="center"><a href="resume.html">我的成果</a></td>
+        <td width="100" align="center"><a href="photo.html">我的相册</a></td>
+        <td width="100" align="center"><a href="Roll_call.html">随机点名</a></td>
+        <td width="100" align="center"><a href="course.html">我的课程</a></td>
+        <td width="100" align="center"><a href="tools.html">常用工具</a></td>
+    </tr>
+</table>
+  <div class="content">
+    <h1>&#24352;&#23792;20220611&#32534;&#20889;</h1>
+    <!--introduction-->
+    <!--/introduction-->
+    <h2>Contents</h2>
+    <div>
+      <ul>
+        <li><a href="#1">&#23454;&#39564;2.1
+            &#20108;&#38454;&#31995;&#32479;&#30340;&#26102;&#22495;&#21709;&#24212;</a></li>
+        <li><a href="#2">&#23454;&#39564;2.2
+            &#20856;&#22411;&#30340;&#19977;&#38454;&#31995;&#32479;&#31283;&#23450;&#24615;&#20998;&#26512;</a></li>
+      </ul>
+    </div>
+    <h2 id="1">&#23454;&#39564;2.1 &#20108;&#38454;&#31995;&#32479;&#30340;&#26102;&#22495;&#21709;&#24212;</h2>
+    <pre class="codeinput">clc
+clear
+close <span class="string">all</span>
+<span class="comment">% &#30005;&#38459;R&#30340;&#20540;</span>
+R=[50,160,200];
+<span class="comment">% K&#22686;&#30410;</span>
+k=200./R;
+<span class="comment">% &#20223;&#30495;&#26102;&#38388;</span>
+<span class="comment">%t1=-1:0.01</span>
+t=0:0.01:5;
+<span class="keyword">for</span> i=1:length(k)
+    <span class="comment">%&#26500;&#24314;&#38381;&#29615;&#20256;&#36882;&#20989;&#25968;</span>
+    s=tf(5*k(i),[1,5,5*k(i)]);
+    S=stepinfo(s)
+    <span class="comment">%&#38381;&#29615;&#20256;&#36882;&#20989;&#25968;&#30340;&#38454;&#36291;&#21709;&#24212;</span>
+    y=step(s,t);
+    <span class="comment">%&#23558;&#38454;&#36291;&#21709;&#24212;&#32467;&#26524;&#20445;&#30041;&#33267;y_repond</span>
+    y_repond(i,:)=y;
+<span class="keyword">end</span>
+<span class="comment">% &#32472;&#22270;</span>
+figure
+plot(t,y_repond,<span class="string">'Linewidth'</span>,3)
+legend(<span class="string">'R=50K'</span>,<span class="string">'R=160K'</span>,<span class="string">'R=200K'</span>,<span class="string">'Location'</span>,<span class="string">'best'</span>)
+grid <span class="string">on</span>
+xlabel(<span class="string">'&#26102;&#38388;'</span>)
+ylabel(<span class="string">'&#30005;&#21387;'</span>)
+title(<span class="string">'&#23454;&#39564;2'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+</pre>
+    <pre class="codeoutput">S = 
+  &#21253;&#21547;&#20197;&#19979;&#23383;&#27573;&#30340; struct:
+
+         RiseTime: 0.3936
+    TransientTime: 1.3088
+     SettlingTime: 1.3088
+      SettlingMin: 0.9174
+      SettlingMax: 1.1203
+        Overshoot: 12.0265
+       Undershoot: 0
+             Peak: 1.1203
+         PeakTime: 0.8474
+S = 
+  &#21253;&#21547;&#20197;&#19979;&#23383;&#27573;&#30340; struct:
+
+         RiseTime: 1.3432
+    TransientTime: 2.3336
+     SettlingTime: 2.3336
+      SettlingMin: 0.9008
+      SettlingMax: 0.9999
+        Overshoot: 0
+       Undershoot: 0
+             Peak: 0.9999
+         PeakTime: 4.7900
+S = 
+  &#21253;&#21547;&#20197;&#19979;&#23383;&#27573;&#30340; struct:
+
+         RiseTime: 1.7685
+    TransientTime: 3.1788
+     SettlingTime: 3.1788
+      SettlingMin: 0.9034
+      SettlingMax: 0.9998
+        Overshoot: 0
+       Undershoot: 0
+             Peak: 0.9998
+         PeakTime: 6.5933
+</pre><img vspace="5" hspace="5" src="images/ex2_matlab/exp2_1_20220611.png" alt="">
+    <h2 id="2">&#23454;&#39564;2.2
+      &#20856;&#22411;&#30340;&#19977;&#38454;&#31995;&#32479;&#31283;&#23450;&#24615;&#20998;&#26512;</h2>
+    <pre class="codeinput">k1=500/30;
+k2=500/41.7;
+k3=500/100;
+R=[30,41.7,100];<span class="comment">% &#30005;&#38459;&#20540;&#30340;&#22823;&#23567;</span>
+t=0:0.01:20; <span class="comment">%&#35774;&#32622;&#20223;&#30495;&#26102;&#38388;</span>
+<span class="keyword">for</span> i=1:length(R)
+    K=500/R(i);   <span class="comment">% &#24320;&#29615;&#22686;&#30410;</span>
+    num=[20*K];
+    den=[1 12 20 20*K];
+    p=roots(den); <span class="comment">% &#27714;&#26681;</span>
+    sys=tf(num,den);
+    y=step(sys,t); <span class="comment">%&#21333;&#20301;&#38454;&#36291;&#21709;&#24212;</span>
+    Y(i,:)=y;
+    P(i,:)=p;
+<span class="keyword">end</span>
+
+figure
+plot(t,Y(1,:),<span class="string">'Linewidth'</span>,4)
+legend(<span class="string">'R=30K'</span>)
+xlim([0,10])
+grid <span class="string">on</span>
+xlabel(<span class="string">'&#26102;&#38388;'</span>)
+ylabel(<span class="string">'&#30005;&#21387;'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+title(<span class="string">'&#23454;&#39564;3.1'</span>)
+figure
+plot(t,Y(2,:),<span class="string">'Linewidth'</span>,4)
+legend(<span class="string">'R=41.7K'</span>)
+xlim([0,10])
+grid <span class="string">on</span>
+xlabel(<span class="string">'&#26102;&#38388;'</span>)
+ylabel(<span class="string">'&#30005;&#21387;'</span>)
+title(<span class="string">'&#23454;&#39564;3.2'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+
+figure
+plot(t,Y(3,:),<span class="string">'Linewidth'</span>,4)
+legend(<span class="string">'R=100K'</span>)
+xlim([0,10])
+grid <span class="string">on</span>
+xlabel(<span class="string">'&#26102;&#38388;'</span>)
+ylabel(<span class="string">'&#30005;&#21387;'</span>)
+title(<span class="string">'&#23454;&#39564;3.3'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+
+figure
+plot(t,Y,<span class="string">'Linewidth'</span>,4)
+legend(<span class="string">'R=30K'</span>,<span class="string">'R=41.7K'</span>,<span class="string">'R=100K'</span>)
+xlim([0,10])
+grid <span class="string">on</span>
+xlabel(<span class="string">'&#26102;&#38388;'</span>)
+ylabel(<span class="string">'&#30005;&#21387;'</span>)
+title(<span class="string">'&#23454;&#39564;3'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+</pre><img vspace="5" hspace="5" src="images/ex2_matlab/exp2_1_20220611_02.png" alt=""> <img vspace="5" hspace="5"
+      src="images/ex2_matlab/exp2_1_20220611_03.png" alt=""> <img vspace="5" hspace="5" src="images/ex2_matlab/exp2_1_20220611_04.png" alt=""> <img
+      vspace="5" hspace="5" src="images/ex2_matlab/exp2_1_20220611_05.png" alt="">
+    <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021b</a><br>
+    </p>
+  </div>
+  <!--
+##### SOURCE BEGIN #####
+%% 张峰20220611编写 
+%% 实验2.1 二阶系统的时域响应
+clc
+clear
+close all
+% 电阻R的值
+R=[50,160,200]; 
+% K增益
+k=200./R;
+% 仿真时间
+%t1=-1:0.01
+t=0:0.01:5;     
+for i=1:length(k)
+    %构建闭环传递函数
+    s=tf(5*k(i),[1,5,5*k(i)]); 
+    S=stepinfo(s)
+    %闭环传递函数的阶跃响应
+    y=step(s,t);  
+    %将阶跃响应结果保留至y_repond
+    y_repond(i,:)=y;           
+end
+% 绘图
+figure
+plot(t,y_repond,'Linewidth',3)
+legend('R=50K','R=160K','R=200K','Location','best')
+grid on
+xlabel('时间')
+ylabel('电压')
+title('实验2')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+%%  实验2.2 典型的三阶系统稳定性分析
+k1=500/30;
+k2=500/41.7;
+k3=500/100;
+R=[30,41.7,100];% 电阻值的大小
+t=0:0.01:20; %设置仿真时间
+for i=1:length(R)
+    K=500/R(i);   % 开环增益 
+    num=[20*K];
+    den=[1 12 20 20*K];
+    p=roots(den); % 求根
+    sys=tf(num,den); 
+    y=step(sys,t); %单位阶跃响应
+    Y(i,:)=y;
+    P(i,:)=p;
+end
+
+figure
+plot(t,Y(1,:),'Linewidth',4)
+legend('R=30K')
+xlim([0,10])
+grid on
+xlabel('时间')
+ylabel('电压')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+title('实验3.1')
+figure
+plot(t,Y(2,:),'Linewidth',4)
+legend('R=41.7K')
+xlim([0,10])
+grid on
+xlabel('时间')
+ylabel('电压')
+title('实验3.2')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+
+figure
+plot(t,Y(3,:),'Linewidth',4)
+legend('R=100K')
+xlim([0,10])
+grid on
+xlabel('时间')
+ylabel('电压')
+title('实验3.3')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+
+figure
+plot(t,Y,'Linewidth',4)
+legend('R=30K','R=41.7K','R=100K')
+xlim([0,10])
+grid on
+xlabel('时间')
+ylabel('电压')
+title('实验3')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+##### SOURCE END #####
+-->
+</body>
+
+</html>

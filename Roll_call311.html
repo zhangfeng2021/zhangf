@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">	
+    <title>随机点名系统--倒计时美化版本</title>
+    <style>
+	/*样式代码，非专业人士请勿更改*/		
+       	
+        .wrapper{
+            text-align: center;
+        }
+		
+		.wrapper ul{
+            padding: 0;
+        }
+		
+        .wrapper ul li{
+            width: 20%;
+            height: 45px;
+            text-align: center;
+            margin: 8px;
+			font-size: 35px;
+            border:2px solid #ccc;
+			border-color:green;
+            border-radius: 15px;           
+            display: inline-block;
+        }
+		
+        .wrapper button{
+			outline-color: #fff;
+            margin-top: 20px;
+			font-size: 40px;
+            width: 25%;
+            height: 60px;
+            border: none;
+            border-radius: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+		
+        .wrapper .active{
+            background-color: #5af3cf;
+            font-weight: 700;
+			/* font-family:"华文仿宋"; */
+        }
+		
+        .lucking{           
+			margin-top: 2px;
+        }	
+		
+		.lucking p{
+            font-weight: 700;
+			font-size: 45px;
+			font-family:"华文仿宋";
+        }		
+		
+		#headline{
+			text-align:center;
+			font-weight: bold;
+			font-size:40px;
+			color: #ff00a5;
+			font-family:"华文仿宋";
+		}		
+		
+		#showTextOne{
+			font-size:30px;
+			text-align:center;
+			left:0;
+			position:fixed;
+			width:100%;
+			bottom:125px;
+		}
+		
+		#showTextTwo{
+			font-size:30px;
+			text-align:center;
+			left:0;
+			position:fixed;
+			width:100%;
+			bottom:125px;
+		}
+		
+		#showTime{
+			color:red;
+			font-size:30px;
+		}
+		
+		#tailOne{
+			position:fixed;
+			text-align:right;
+			right:80px;
+			font-size: 30px;
+			bottom:80px;
+			width:100%;
+			font-family:"华文仿宋";
+		}
+		
+		#tailTwo{
+			position:fixed;
+			text-align:right;
+			right:80px;
+			font-size: 30px;
+			bottom:40px;
+			width:100%;
+			font-family:"华文仿宋";
+		}
+		
+		#tailThree{
+			position:fixed;
+			bottom:5px;
+			width:100%;
+			font-size: 25px;
+			font-family:"华文仿宋";
+		}
+    </style>
+</head>
+<body>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav">
+		<tr>
+		  <td><img src="images/logo2.png"  height="100" /></td>
+		  <td width="100" align="center"><a href="index.html">主页</a></td>
+		  <td width="100" align="center"><a href="resume.html">我的成果</a></td>
+		  <td width="100" align="center"><a href="photo.html">我的相册</a></td>
+		  <td width="100" align="center"><a href="Roll_call.html">随机点名</a></td>
+		  <td width="100" align="center"><a href="course.html">我的课程</a></td>
+		  <td width="100" align="center"><a href="tools.html">常用工具</a></td>
+		</tr>
+	  </table>
+	<!-- 标题 -->
+	<div class="headline" id="headline">
+       <span>随机点名系统</span>
+    </div>	
+	<!-- 名单面板 -->
+    <div class="wrapper" id="panel">
+        <ul id="list"></ul>		
+        <button class="start" id="startBtn" style="background-color:#0000ff78;">开始点名</button>
+        <button class="stop" id="stopBtn" style="background-color:#ff000091;" disabled>停止</button>
+        <div class="lucking" id="show">
+            <p></p>
+        </div>
+    </div>
+	<!-- 倒计时文字 -->
+	<span id="showTextOne">【开始后,可手动点击停止,不然程序将在10秒后自动停止】</span>
+	<span id="showTextTwo" hidden>【程序将在 <span id="showTime">10</span> 秒后自动停止】</span>
+	<!-- 底部文字 -->
+	<div class="tail" id="tailOne">
+       <span>开发者：天蓝蓝</span>
+    </div>	
+	<div class="tail" id="tailTwo"> 
+	   <span>记得好好学习喔</span>
+    </div>	
+	<!-- 底部文字，走马灯 -->
+	<div class="tail" id="tailThree"> 
+	   <marquee style="color:red;" scrollamount=10;>
+		温馨提示：微机原理及单片机应用课程虽然很枯燥，但是实用性极强，对后续的嵌入式学习很重要，同学们一定要好好学习！</marquee>
+    </div>	
+	
+</body>
+</html>
+<script>
+	/*核心代码，非专业人士请勿更改*/
+	//需要抽取的名字如下写法，用英文单引号('')把名字括起来，然后加上英文逗号(,)隔开，最后一个名字后面不需要加上英文逗号(,)。不限定写多少个名字，不够可以按要求继续加上去，也可以删除(要将英文单引号('')加上名字和每个名字后面的逗号一起删)
+    var array = ['安 鑫','常 岱','但研赫','党世博','葛 尧','贺成成','侯嘉诚','黄鹏飞','李烨晖','梁佳宇','雒涵坤','宋金泽','田朝阳','王艺博','王宇龙','温卓凡','吴 宇','张颖杰','张智博','白鑫宇','曾佳怡','高琦琪','高晴晴','雷 杰','梁倩雯','刘韩蒙','谈锐锐','杨 珍','赵莎莎','王明珏'];
+    // 获取元素
+    var wrapper  = document.getElementById('panel');
+    var ul = document.getElementById('list');;
+    var timer = null;//点名计时器变量
+	
+	//调用（执行）事件
+    init();
+	
+
+	//读取事件
+    function init(){
+		// 动态创建li
+		for(var i = 0; i < array.length;i++){
+			var oli = document.createElement('li');
+			oli.innerHTML = array[i];//依次从数组中遍历一个
+			ul.appendChild(oli);//拼接进li列表
+		}
+		//调用（执行）点击事件
+        clickEvent();
+    }
+	
+	var test=0;//第三方变量，用来验证开始和停止按钮的点击
+	
+	// 获取抽取的结果框
+    var lucking = document.getElementById('show');
+	
+	// 点击事件/函数
+    function clickEvent(){		
+		// 获取开始点名按钮（start）
+		var start = wrapper.getElementsByTagName('button')[0];
+		// 获取停止按钮（stop）
+		var stop = wrapper.getElementsByTagName('button')[1];		
+		        
+		//开始点名按钮触发事件
+        start.addEventListener('click',function(){			
+			test=1;//赋值为1
+			countDown();//调用倒计时事件
+			lucking.children[0].innerText ="";//清空lucking下的p标签内容			
+            clearInterval(timer);//清空计时器,避免二次点击无法停止
+			// 定时器（可以设定抽取变化的效率，即速度）
+            timer = setInterval(function(){                
+				//从所有的名字中（数组里）随机抽取一个索引（从0开始），例如有35个人，那索引就是0到35-1，即0~34。
+                var random = Math.floor(Math.random()*array.length);// 获得随机数
+				//通过for循环遍历，一共遍历（最大索引）次
+                for(var i = 0;i < array.length;i++){
+                    ul.children[i].className = '';
+                }
+                ul.children[random].className = 'active';//返回抽取到的名字，然后通过停止按钮事件显示出来
+            },50);//这个50就是设定时间的，这是50等于0.05秒，5000是5秒,1000就是1秒，如此类推
+        });		
+				
+		//停止按钮触发事件
+        stop.addEventListener('click',function(){
+			test=2;//赋值为2		
+			clearInterval(timer);//清空计时器，停止
+			// 找到此时的元素
+			var active = document.getElementsByClassName('active')[0];
+			lucking.children[0].innerText = "幸运儿：" + active.innerText;//往lucking下的p标签添加内容，即显示名字
+			showEvent();//调用控制事件					            
+        })
+    }
+		
+	
+	var time = 10;//设置倒计时10秒
+	//通过id获取元素
+	var showTextOne = document.getElementById("showTextOne");
+	var showTextTwo = document.getElementById("showTextTwo");
+	var startBtn = document.getElementById("startBtn");
+	var stopBtn = document.getElementById("stopBtn");
+	//倒计时功能
+	function countDown() {
+		if(test==1){
+			if (time > 0) {
+				showTextOne.style.display="none";//隐藏倒计时文字	
+				showTextTwo.style.display="block";//显示倒计时文字
+				document.getElementById("showTime").innerText=time;//改变倒计时秒数
+				time--;
+				setTimeout("countDown()", 1000);//倒计时1秒执行一次
+				setTimeout("showStopBtn()", 700);//设置0.7秒显示，防止两个按钮点击过快					
+			} else {
+				clearInterval(timer);//清空计时器，停止
+				// 找到此时的元素
+				var active = document.getElementsByClassName('active')[0];
+				lucking.children[0].innerText = "幸运儿：" + active.innerText;//往lucking下的p标签添加内容，即显示名字		
+				showEvent();//调用控制事件
+			}
+		}
+		return;
+	}
+	
+	//控制事件
+	function showEvent() {
+		time=10;//重新赋值/重置倒计时为10
+		showTextOne.style.display="block";//显示倒计时文字
+		showTextTwo.style.display="none";//隐藏倒计时文字			
+		setTimeout("showStartBtn()", 700);//设置0.7秒显示，防止两个按钮点击过快			
+	}
+	
+	//控制事件
+	function showStartBtn() {
+		startBtn.disabled = false;//开始按钮可点击	
+		stopBtn.disabled = true;//停止按钮不可点击		
+	}
+	
+	//控制事件
+	function showStopBtn() {
+		startBtn.disabled = true;//开始按钮不可点击
+		stopBtn.disabled = false;//停止按钮可点击
+	}
+	
+</script>

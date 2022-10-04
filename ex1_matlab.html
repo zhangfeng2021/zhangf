@@ -1,0 +1,831 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+    <title>exp1_0528</title>
+    <meta name="generator" content="MATLAB 9.11">
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.date" content="2022-05-28">
+    <meta name="DC.source" content="exp1_0528.m">
+    <style type="text/css">
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent
+        }
+
+        body {
+            line-height: 1
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        blockquote,
+        q {
+            quotes: none
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none
+        }
+
+        :focus {
+            outine: 0
+        }
+
+        ins {
+            text-decoration: none
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        html {
+            min-height: 100%;
+            margin-bottom: 1px;
+        }
+
+        html body {
+            height: 100%;
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: #000;
+            line-height: 140%;
+            background: #fff none;
+            overflow-y: scroll;
+        }
+
+        html body td {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        h1 {
+            padding: 0px;
+            margin: 0px 0px 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            color: #d55000;
+            line-height: 100%;
+            font-weight: normal;
+        }
+
+        h2 {
+            padding: 0px;
+            margin: 0px 0px 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            color: #000;
+            font-weight: bold;
+            line-height: 140%;
+            border-bottom: 1px solid #d6d4d4;
+            display: block;
+        }
+
+        h3 {
+            padding: 0px;
+            margin: 0px 0px 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+            color: #000;
+            font-weight: bold;
+            line-height: 140%;
+        }
+
+        a {
+            color: #005fce;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #005fce;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #004aa0;
+            text-decoration: none;
+        }
+
+        p {
+            padding: 0px;
+            margin: 0px 0px 20px;
+        }
+
+        img {
+            padding: 0px;
+            margin: 0px 0px 20px;
+            border: none;
+        }
+
+        p img,
+        pre img,
+        tt img,
+        li img,
+        h1 img,
+        h2 img {
+            margin-bottom: 0px;
+        }
+
+        ul {
+            padding: 0px;
+            margin: 0px 0px 20px 23px;
+            list-style: square;
+        }
+
+        ul li {
+            padding: 0px;
+            margin: 0px 0px 7px 0px;
+        }
+
+        ul li ul {
+            padding: 5px 0px 0px;
+            margin: 0px 0px 7px 23px;
+        }
+
+        ul li ol li {
+            list-style: decimal;
+        }
+
+        ol {
+            padding: 0px;
+            margin: 0px 0px 20px 0px;
+            list-style: decimal;
+        }
+
+        ol li {
+            padding: 0px;
+            margin: 0px 0px 7px 23px;
+            list-style-type: decimal;
+        }
+
+        ol li ol {
+            padding: 5px 0px 0px;
+            margin: 0px 0px 7px 0px;
+        }
+
+        ol li ol li {
+            list-style-type: lower-alpha;
+        }
+
+        ol li ul {
+            padding-top: 7px;
+        }
+
+        ol li ul li {
+            list-style: square;
+        }
+
+        .content {
+            font-size: 1.2em;
+            line-height: 140%;
+            padding: 20px;
+        }
+
+        pre,
+        code {
+            font-size: 12px;
+        }
+
+        tt {
+            font-size: 1.2em;
+        }
+
+        pre {
+            margin: 0px 0px 20px;
+        }
+
+        pre.codeinput {
+            padding: 10px;
+            border: 1px solid #d3d3d3;
+            background: #f7f7f7;
+        }
+
+        pre.codeoutput {
+            padding: 10px 11px;
+            margin: 0px 0px 20px;
+            color: #4c4c4c;
+        }
+
+        pre.error {
+            color: red;
+        }
+
+        @media print {
+
+            pre.codeinput,
+            pre.codeoutput {
+                word-wrap: break-word;
+                width: 100%;
+            }
+        }
+
+        span.keyword {
+            color: #0000FF
+        }
+
+        span.comment {
+            color: #228B22
+        }
+
+        span.string {
+            color: #A020F0
+        }
+
+        span.untermstring {
+            color: #B20000
+        }
+
+        span.syscmd {
+            color: #B28C00
+        }
+
+        span.typesection {
+            color: #A0522D
+        }
+
+        .footer {
+            width: auto;
+            padding: 10px 0px;
+            margin: 25px 0px 0px;
+            border-top: 1px dotted #878787;
+            font-size: 0.8em;
+            line-height: 140%;
+            font-style: italic;
+            color: #878787;
+            text-align: left;
+            float: none;
+        }
+
+        .footer p {
+            margin: 0px;
+        }
+
+        .footer a {
+            color: #878787;
+        }
+
+        .footer a:hover {
+            color: #878787;
+            text-decoration: underline;
+        }
+
+        .footer a:visited {
+            color: #878787;
+        }
+
+        table th {
+            padding: 7px 5px;
+            text-align: left;
+            vertical-align: middle;
+            border: 1px solid #d6d4d4;
+            font-weight: bold;
+        }
+
+        table td {
+            padding: 7px 5px;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #d6d4d4;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav">
+        <tr>
+            <td><img src="images/logo2.png" height="50" /></td>
+            <td width="100" align="center"><a href="index.html">主页</a></td>
+            <td width="100" align="center"><a href="resume.html">我的成果</a></td>
+            <td width="100" align="center"><a href="photo.html">我的相册</a></td>
+            <td width="100" align="center"><a href="Roll_call.html">随机点名</a></td>
+            <td width="100" align="center"><a href="course.html">我的课程</a></td>
+            <td width="100" align="center"><a href="tools.html">常用工具</a></td>
+        </tr>
+    </table>
+    <div class="content">
+        <h2>Contents</h2>
+        <div>
+            <ul>
+                <li><a href="#2">&#24352;&#23792;2022&#24180;05&#26376;28&#26085;&#32534;&#20889;</a></li>
+                <li><a href="#3">1 &#27604;&#20363;&#29615;&#33410;</a></li>
+                <li><a href="#4">2 &#31215;&#20998;&#29615;&#33410;</a></li>
+                <li><a href="#5">3 &#27604;&#20363;&#31215;&#20998;&#29615;&#33410;</a></li>
+                <li><a href="#6">4 &#27604;&#20363;&#31215;&#20998;</a></li>
+                <li><a href="#7">5 &#27604;&#20363;&#24494;&#20998;</a></li>
+                <li><a href="#8">5 &#27604;&#20363;&#31215;&#20998;&#24494;&#20998;</a></li>
+            </ul>
+        </div>
+        <pre class="codeinput">clc
+clear
+close <span class="string">all</span>
+</pre>
+        <h2 id="2">&#24352;&#23792;2022&#24180;05&#26376;28&#26085;&#32534;&#20889;</h2>
+        <p>&#21021;&#22987;&#21270;&#21442;&#25968;</p>
+        <pre class="codeinput">t=0:0.01:10;
+step_signal=ones(1,length(t));
+line_width=4;
+</pre>
+        <h2 id="3">1 &#27604;&#20363;&#29615;&#33410;</h2>
+        <pre class="codeinput">k=[0.5,0.8];  <span class="comment">% &#22686;&#30410;</span>
+legend_str{1}=<span class="string">'&#38454;&#36291;&#20449;&#21495;'</span>;
+<span class="keyword">for</span> i=1:length(k)
+    s=tf(k(i),1);
+    y(i,:)=step(s,t);
+    legend_str{i+1}=strcat(<span class="string">'&#22686;&#30410;K='</span>,num2str(k(i)));
+<span class="keyword">end</span>
+figure
+plot(t,step_signal,t,y,<span class="string">'LineWidth'</span>,line_width)
+legend(legend_str,<span class="string">'Location'</span>,<span class="string">'best'</span>)
+xlabel(<span class="string">'&#26102;&#38388;/s'</span>)
+ylabel(<span class="string">'&#30005;&#21387;&#20540;/V'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+ylim([-0.3,1.3])
+title(<span class="string">'&#27604;&#20363;&#29615;&#33410;'</span>)
+</pre><img vspace="5" hspace="5" src="images/ex1_matlab/exp1_0528_01.png" alt="">
+        <h2 id="4">2 &#31215;&#20998;&#29615;&#33410;</h2>
+        <pre class="codeinput">voltage_t=1; <span class="comment">%&#27714;&#36755;&#20986;&#20449;&#21495;1v&#26102;&#30340;&#26102;&#38388;</span>
+saturated=10; <span class="comment">% &#39281;&#21644;&#30005;&#21387;</span>
+R0=200*1e3; <span class="comment">% R0&#30340;&#30005;&#38459;&#20540;</span>
+C=[1e-6,2e-6];  <span class="comment">% &#30005;&#23481;&#20540;</span>
+legend_str{1}=<span class="string">'&#38454;&#36291;&#20449;&#21495;'</span>;
+<span class="keyword">for</span> i=1:length(C)
+    s=tf(1,[R0*C(i),0]);
+    ytemp=step(s,t);
+    t_saturated=find(ytemp&gt;voltage_t);
+    <span class="keyword">if</span> length(t_saturated)
+        t_satu=t_saturated(1);
+        t_sat(i)=t_satu;
+        ytemp(ytemp&gt;=saturated)=saturated;
+    <span class="keyword">end</span>
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat(<span class="string">'&#30005;&#38459;R0=200K,&#30005;&#23481;C='</span>,num2str(C(i)*1e6),<span class="string">'uF'</span>);
+<span class="keyword">end</span>
+
+figure
+plot(t,step_signal,t,y,<span class="string">'LineWidth'</span>,line_width)
+hold <span class="string">on</span>
+t1_s=t(t_sat(1));
+t2_s=t(t_sat(2));
+plot([t1_s,t1_s],[-0.1,saturated+1],<span class="string">'r--'</span>,<span class="string">'LineWidth'</span>,3)
+text(t1_s,saturated-1,strcat(<span class="string">'t='</span>,num2str(t1_s)),<span class="string">'Fontsize'</span>,36)
+plot([t2_s,t2_s],[-0.1,saturated+1],<span class="string">'g--'</span>,<span class="string">'LineWidth'</span>,3)
+text(t2_s,saturated,strcat(<span class="string">'t='</span>,num2str(t2_s)),<span class="string">'Fontsize'</span>,36)
+legend(legend_str,<span class="string">'Location'</span>,<span class="string">'best'</span>)
+xlabel(<span class="string">'&#26102;&#38388;/s'</span>)
+ylabel(<span class="string">'&#30005;&#21387;&#20540;/V'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+xlim([0,4.5])
+ylim([-0.3,11])
+title(<span class="string">'&#31215;&#20998;&#29615;&#33410;'</span>)
+</pre><img vspace="5" hspace="5" src="images/ex1_matlab/exp1_0528_02.png" alt="">
+        <h2 id="5">3 &#27604;&#20363;&#31215;&#20998;&#29615;&#33410;</h2>
+        <pre class="codeinput">voltage_t=2; <span class="comment">%&#27714;&#36755;&#20986;&#20449;&#21495;1v&#26102;&#30340;&#26102;&#38388;</span>
+saturated=10; <span class="comment">% &#39281;&#21644;&#30005;&#21387;</span>
+R0=200*1e3; <span class="comment">% R0&#30340;&#30005;&#38459;&#20540;</span>
+R1=200*1e3; <span class="comment">% R0&#30340;&#30005;&#38459;&#20540;</span>
+C=[1e-6,2e-6];  <span class="comment">% &#30005;&#23481;&#20540;</span>
+legend_str{1}=<span class="string">'&#38454;&#36291;&#20449;&#21495;'</span>;
+<span class="keyword">for</span> i=1:length(C)
+    s=tf([R1/R0*R0*C(i),1],[R0*C(i),0]);
+    ytemp=step(s,t);
+    t_saturated=find(ytemp&gt;voltage_t);
+    <span class="keyword">if</span> length(t_saturated)
+        t_satu=t_saturated(1);
+        t_sat(i)=t_satu;
+        ytemp(ytemp&gt;=saturated)=saturated;
+    <span class="keyword">end</span>
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat(<span class="string">'&#30005;&#38459;R0=200K,R1=200K,&#30005;&#23481;C='</span>,num2str(C(i)*1e6),<span class="string">'uF'</span>);
+<span class="keyword">end</span>
+figure
+plot(t,step_signal,t,y,<span class="string">'LineWidth'</span>,line_width)
+hold <span class="string">on</span>
+t1_s=t(t_sat(1));
+t2_s=t(t_sat(2));
+plot([t1_s,t1_s],[-0.1,saturated+1],<span class="string">'r--'</span>,<span class="string">'LineWidth'</span>,line_width)
+text(t1_s,saturated-1,strcat(<span class="string">'t='</span>,num2str(t1_s)),<span class="string">'Fontsize'</span>,36)
+plot([t2_s,t2_s],[-0.1,saturated+1],<span class="string">'g--'</span>,<span class="string">'LineWidth'</span>,3)
+text(t2_s,saturated,strcat(<span class="string">'t='</span>,num2str(t2_s)),<span class="string">'Fontsize'</span>,36)
+legend(legend_str,<span class="string">'Location'</span>,<span class="string">'best'</span>)
+xlabel(<span class="string">'&#26102;&#38388;/s'</span>)
+ylabel(<span class="string">'&#30005;&#21387;&#20540;/V'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+ylim([-0.3,11])
+title(<span class="string">'&#27604;&#20363;&#31215;&#20998;&#29615;&#33410;'</span>)
+</pre><img vspace="5" hspace="5" src="images/ex1_matlab/exp1_0528_03.png" alt="">
+        <h2 id="6">4 &#27604;&#20363;&#31215;&#20998;</h2>
+        <pre class="codeinput">saturated=10; <span class="comment">% 0.632&#30005;&#21387;</span>
+voltage_t=0.632; <span class="comment">% 0.632&#30005;&#21387;</span>
+R0=200*1e3; <span class="comment">% R0&#30340;&#30005;&#38459;&#20540;</span>
+R1=200*1e3; <span class="comment">% R0&#30340;&#30005;&#38459;&#20540;</span>
+C=[1e-6,2e-6];  <span class="comment">% &#30005;&#23481;&#20540;</span>
+legend_str{1}=<span class="string">'&#38454;&#36291;&#20449;&#21495;'</span>;
+<span class="keyword">for</span> i=1:length(C)
+    s=tf(R1/R0,[R1*C(i),1]);
+    ytemp=step(s,t);
+    t_saturated=find(ytemp&gt;voltage_t);
+    <span class="keyword">if</span> length(t_saturated)
+        t_satu=t_saturated(1);
+        t_sat(i)=t_satu;
+        ytemp(ytemp&gt;=saturated)=saturated;
+    <span class="keyword">end</span>
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat(<span class="string">'&#30005;&#38459;R0=200K,R1=200K,&#30005;&#23481;C='</span>,num2str(C(i)*1e6),<span class="string">'uF'</span>);
+<span class="keyword">end</span>
+figure
+plot(t,step_signal,t,y,<span class="string">'LineWidth'</span>,line_width)
+hold <span class="string">on</span>
+t1_s=t(t_sat(1));
+t2_s=t(t_sat(2));
+plot([t1_s,t1_s],[-0.1,saturated+1],<span class="string">'r--'</span>,<span class="string">'LineWidth'</span>,line_width)
+text(t1_s,voltage_t,strcat(<span class="string">'t='</span>,num2str(t1_s)),<span class="string">'Fontsize'</span>,36)
+plot([t2_s,t2_s],[-0.1,saturated+1],<span class="string">'g--'</span>,<span class="string">'LineWidth'</span>,line_width)
+text(t2_s,0,strcat(<span class="string">'t='</span>,num2str(t2_s)),<span class="string">'Fontsize'</span>,36)
+plot([-1,t2_s],[voltage_t,voltage_t],<span class="string">'b--'</span>,<span class="string">'LineWidth'</span>,line_width)
+text(-1,voltage_t,strcat(num2str(voltage_t)),<span class="string">'Fontsize'</span>,36)
+legend(legend_str,<span class="string">'Location'</span>,<span class="string">'best'</span>)
+xlabel(<span class="string">'&#26102;&#38388;/s'</span>)
+ylabel(<span class="string">'&#30005;&#21387;&#20540;/V'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+y_in_max=max(step_signal);
+y_out_max=max(y(:));
+y_max=max(y_in_max,y_out_max);
+xlim([0,4])
+ylim([-0.3,1.15*y_max])
+title(<span class="string">'&#27604;&#20363;&#31215;&#20998;&#29615;&#33410;'</span>)
+</pre><img vspace="5" hspace="5" src="images/ex1_matlab/exp1_0528_04.png" alt="">
+        <h2 id="7">5 &#27604;&#20363;&#24494;&#20998;</h2>
+        <pre class="codeinput">saturated=10; <span class="comment">% 0.632&#30005;&#21387;</span>
+R0=100*1e3; <span class="comment">% R0&#30340;&#30005;&#38459;&#20540;</span>
+R2=100*1e3; <span class="comment">% R2&#30340;&#30005;&#38459;&#20540;</span>
+R3=10*1e3; <span class="comment">% R3&#30340;&#30005;&#38459;&#20540;</span>
+C=1e-6;  <span class="comment">% &#30005;&#23481;&#20540;</span>
+R1=[100*1e3,200*1e3]; <span class="comment">% R1&#30340;&#30005;&#38459;&#20540;</span>
+legend_str{1}=<span class="string">'&#38454;&#36291;&#20449;&#21495;'</span>;
+<span class="keyword">for</span> i=1:length(R1)
+    P=(R1(i)+R2)/R0;
+    num = [R1(i)*R2*C, 0];
+    den = [R0*R3*C, R0];
+    G1= tf(num, den);
+    G2= P+G1;
+    ytemp=step(G2,t);
+    ytemp(ytemp&gt;=saturated)=saturated;
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat(<span class="string">'&#30005;&#38459;R1='</span>,num2str(R1(i)));
+<span class="keyword">end</span>
+figure
+plot(t,step_signal,t,y,<span class="string">'LineWidth'</span>,line_width)
+legend(legend_str,<span class="string">'Location'</span>,<span class="string">'best'</span>)
+xlabel(<span class="string">'&#26102;&#38388;/s'</span>)
+ylabel(<span class="string">'&#30005;&#21387;&#20540;/V'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+y_in_max=max(step_signal);
+y_out_max=max(y(:));
+y_max=max(y_in_max,y_out_max);
+ylim([-0.3,1.15*y_max])
+xlim([0,0.3])
+title(<span class="string">'&#27604;&#20363;&#24494;&#20998;&#29615;&#33410;'</span>)
+</pre><img vspace="5" hspace="5" src="images/ex1_matlab/exp1_0528_05.png" alt="">
+        <h2 id="8">5 &#27604;&#20363;&#31215;&#20998;&#24494;&#20998;</h2>
+        <pre class="codeinput">saturated=10; <span class="comment">% 10v&#39281;&#21644;&#30005;&#21387;</span>
+R0=100*1e3; <span class="comment">% R0&#30340;&#30005;&#38459;&#20540;</span>
+R2=10*1e3; <span class="comment">% R2&#30340;&#30005;&#38459;&#20540;</span>
+R3=10*1e3; <span class="comment">% R3&#30340;&#30005;&#38459;&#20540;</span>
+C1=1e-6;  <span class="comment">% &#30005;&#23481;&#20540;</span>
+C2=1e-6;  <span class="comment">% &#30005;&#23481;&#20540;</span>
+R1=[100*1e3,200*1e3]; <span class="comment">% R1&#30340;&#30005;&#38459;&#20540;</span>
+legend_str{1}=<span class="string">'&#38454;&#36291;&#20449;&#21495;'</span>;
+<span class="keyword">for</span> i=1:length(R1)
+    G1=R2/R0;
+    num2 = [R1(i)*C1, 1];
+    den2 = [R0*C1, 0];
+    G2= tf(num2, den2);
+    num3 = [R1(i)*R2*C1*C2, R2*C2,0];
+    den3 = [R0*R3*C1*C2,R0*C1,0];
+    G3= tf(num3, den3);
+    G= G1+G2+G3;
+    ytemp=step(G,t);
+    ytemp(ytemp&gt;=saturated)=saturated;
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat(<span class="string">'&#30005;&#38459;R1='</span>,num2str(R1(i)/1000),<span class="string">'K'</span>);
+<span class="keyword">end</span>
+figure
+plot(t,step_signal,t,y,<span class="string">'LineWidth'</span>,line_width)
+legend(legend_str,<span class="string">'Location'</span>,<span class="string">'best'</span>)
+xlabel(<span class="string">'&#26102;&#38388;/s'</span>)
+ylabel(<span class="string">'&#30005;&#21387;&#20540;/V'</span>)
+set(gca,<span class="string">'FontSize'</span>,36)
+set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1,0.1,0.8,0.8]);
+y_in_max=max(step_signal);
+y_out_max=max(y(:));
+y_max=max(y_in_max,y_out_max);
+ylim([-0.3,1.15*y_max])
+xlim([0,5])
+title(<span class="string">'&#27604;&#20363;&#24494;&#20998;&#31215;&#20998;&#29615;&#33410;'</span>)
+</pre><img vspace="5" hspace="5" src="images/ex1_matlab/exp1_0528_06.png" alt="">
+        <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg;
+                R2021b</a><br></p>
+    </div>
+    <!--
+##### SOURCE BEGIN #####
+clc
+clear
+close all
+%% 张峰2022年05月28日编写
+% 初始化参数
+t=0:0.01:10; 
+step_signal=ones(1,length(t));
+line_width=4; 
+%% 1 比例环节
+k=[0.5,0.8];  % 增益
+legend_str{1}='阶跃信号';
+for i=1:length(k)
+    s=tf(k(i),1); 
+    y(i,:)=step(s,t);  
+    legend_str{i+1}=strcat('增益K=',num2str(k(i)));
+end
+figure
+plot(t,step_signal,t,y,'LineWidth',line_width)
+legend(legend_str,'Location','best')
+xlabel('时间/s')
+ylabel('电压值/V')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+ylim([-0.3,1.3])
+title('比例环节')
+%% 2 积分环节
+voltage_t=1; %求输出信号1v时的时间
+saturated=10; % 饱和电压
+R0=200*1e3; % R0的电阻值
+C=[1e-6,2e-6];  % 电容值
+legend_str{1}='阶跃信号';
+for i=1:length(C)
+    s=tf(1,[R0*C(i),0]); 
+    ytemp=step(s,t);  
+    t_saturated=find(ytemp>voltage_t);
+    if length(t_saturated)
+        t_satu=t_saturated(1);
+        t_sat(i)=t_satu;
+        ytemp(ytemp>=saturated)=saturated;
+    end
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat('电阻R0=200K,电容C=',num2str(C(i)*1e6),'uF');
+end
+
+figure
+plot(t,step_signal,t,y,'LineWidth',line_width)
+hold on
+t1_s=t(t_sat(1));
+t2_s=t(t_sat(2));
+plot([t1_s,t1_s],[-0.1,saturated+1],'rREPLACE_WITH_DASH_DASH','LineWidth',3)
+text(t1_s,saturated-1,strcat('t=',num2str(t1_s)),'Fontsize',36)
+plot([t2_s,t2_s],[-0.1,saturated+1],'gREPLACE_WITH_DASH_DASH','LineWidth',3)
+text(t2_s,saturated,strcat('t=',num2str(t2_s)),'Fontsize',36)
+legend(legend_str,'Location','best')
+xlabel('时间/s')
+ylabel('电压值/V')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+xlim([0,4.5])
+ylim([-0.3,11])
+title('积分环节')
+
+%% 3 比例积分环节
+voltage_t=2; %求输出信号1v时的时间
+saturated=10; % 饱和电压
+R0=200*1e3; % R0的电阻值
+R1=200*1e3; % R0的电阻值
+C=[1e-6,2e-6];  % 电容值
+legend_str{1}='阶跃信号';
+for i=1:length(C)
+    s=tf([R1/R0*R0*C(i),1],[R0*C(i),0]); 
+    ytemp=step(s,t);  
+    t_saturated=find(ytemp>voltage_t);
+    if length(t_saturated)
+        t_satu=t_saturated(1);
+        t_sat(i)=t_satu;
+        ytemp(ytemp>=saturated)=saturated;
+    end
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat('电阻R0=200K,R1=200K,电容C=',num2str(C(i)*1e6),'uF');
+end
+figure
+plot(t,step_signal,t,y,'LineWidth',line_width)
+hold on
+t1_s=t(t_sat(1));
+t2_s=t(t_sat(2));
+plot([t1_s,t1_s],[-0.1,saturated+1],'rREPLACE_WITH_DASH_DASH','LineWidth',line_width)
+text(t1_s,saturated-1,strcat('t=',num2str(t1_s)),'Fontsize',36)
+plot([t2_s,t2_s],[-0.1,saturated+1],'gREPLACE_WITH_DASH_DASH','LineWidth',3)
+text(t2_s,saturated,strcat('t=',num2str(t2_s)),'Fontsize',36)
+legend(legend_str,'Location','best')
+xlabel('时间/s')
+ylabel('电压值/V')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+ylim([-0.3,11])
+title('比例积分环节')
+
+%% 4 比例积分
+saturated=10; % 0.632电压
+voltage_t=0.632; % 0.632电压
+R0=200*1e3; % R0的电阻值
+R1=200*1e3; % R0的电阻值
+C=[1e-6,2e-6];  % 电容值
+legend_str{1}='阶跃信号';
+for i=1:length(C)
+    s=tf(R1/R0,[R1*C(i),1]); 
+    ytemp=step(s,t);  
+    t_saturated=find(ytemp>voltage_t);
+    if length(t_saturated)
+        t_satu=t_saturated(1);
+        t_sat(i)=t_satu;
+        ytemp(ytemp>=saturated)=saturated;
+    end
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat('电阻R0=200K,R1=200K,电容C=',num2str(C(i)*1e6),'uF');
+end
+figure
+plot(t,step_signal,t,y,'LineWidth',line_width)
+hold on
+t1_s=t(t_sat(1));
+t2_s=t(t_sat(2));
+plot([t1_s,t1_s],[-0.1,saturated+1],'rREPLACE_WITH_DASH_DASH','LineWidth',line_width)
+text(t1_s,voltage_t,strcat('t=',num2str(t1_s)),'Fontsize',36)
+plot([t2_s,t2_s],[-0.1,saturated+1],'gREPLACE_WITH_DASH_DASH','LineWidth',line_width)
+text(t2_s,0,strcat('t=',num2str(t2_s)),'Fontsize',36)
+plot([-1,t2_s],[voltage_t,voltage_t],'bREPLACE_WITH_DASH_DASH','LineWidth',line_width)
+text(-1,voltage_t,strcat(num2str(voltage_t)),'Fontsize',36)
+legend(legend_str,'Location','best')
+xlabel('时间/s')
+ylabel('电压值/V')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+y_in_max=max(step_signal);
+y_out_max=max(y(:));
+y_max=max(y_in_max,y_out_max);
+xlim([0,4])  
+ylim([-0.3,1.15*y_max])   
+title('比例积分环节')
+
+%% 5 比例微分
+saturated=10; % 0.632电压
+R0=100*1e3; % R0的电阻值
+R2=100*1e3; % R2的电阻值
+R3=10*1e3; % R3的电阻值
+C=1e-6;  % 电容值
+R1=[100*1e3,200*1e3]; % R1的电阻值
+legend_str{1}='阶跃信号';
+for i=1:length(R1)
+    P=(R1(i)+R2)/R0;
+    num = [R1(i)*R2*C, 0];
+    den = [R0*R3*C, R0];
+    G1= tf(num, den);
+    G2= P+G1;
+    ytemp=step(G2,t);  
+    ytemp(ytemp>=saturated)=saturated;
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat('电阻R1=',num2str(R1(i)));
+end
+figure
+plot(t,step_signal,t,y,'LineWidth',line_width)
+legend(legend_str,'Location','best')
+xlabel('时间/s')
+ylabel('电压值/V')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+y_in_max=max(step_signal);
+y_out_max=max(y(:));
+y_max=max(y_in_max,y_out_max);
+ylim([-0.3,1.15*y_max])   
+xlim([0,0.3])  
+title('比例微分环节')
+%% 5 比例积分微分
+saturated=10; % 10v饱和电压
+R0=100*1e3; % R0的电阻值
+R2=10*1e3; % R2的电阻值
+R3=10*1e3; % R3的电阻值
+C1=1e-6;  % 电容值
+C2=1e-6;  % 电容值
+R1=[100*1e3,200*1e3]; % R1的电阻值
+legend_str{1}='阶跃信号';
+for i=1:length(R1)
+    G1=R2/R0;
+    num2 = [R1(i)*C1, 1];
+    den2 = [R0*C1, 0];
+    G2= tf(num2, den2);
+    num3 = [R1(i)*R2*C1*C2, R2*C2,0];
+    den3 = [R0*R3*C1*C2,R0*C1,0];
+    G3= tf(num3, den3);
+    G= G1+G2+G3;
+    ytemp=step(G,t);  
+    ytemp(ytemp>=saturated)=saturated;
+    y(i,:)=ytemp;
+    legend_str{i+1}=strcat('电阻R1=',num2str(R1(i)/1000),'K');
+end
+figure
+plot(t,step_signal,t,y,'LineWidth',line_width)
+legend(legend_str,'Location','best')
+xlabel('时间/s')
+ylabel('电压值/V')
+set(gca,'FontSize',36)
+set(gcf,'unit','normalized','position',[0.1,0.1,0.8,0.8]);
+y_in_max=max(step_signal);
+y_out_max=max(y(:));
+y_max=max(y_in_max,y_out_max);
+ylim([-0.3,1.15*y_max])   
+xlim([0,5])  
+title('比例微分积分环节')
+##### SOURCE END #####
+-->
+</body>
+
+</html>

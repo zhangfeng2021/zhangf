@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+    <title>&#24352;&#23792;2022&#24180;06&#26376;18&#26085;&#32534;&#20889;</title>
+    <meta name="generator" content="MATLAB 9.11">
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.date" content="2022-06-18">
+    <meta name="DC.source" content="ex3_20210603V3.m">
+    <style type="text/css">
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent
+        }
+
+        body {
+            line-height: 1
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        blockquote,
+        q {
+            quotes: none
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none
+        }
+
+        :focus {
+            outine: 0
+        }
+
+        ins {
+            text-decoration: none
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        html {
+            min-height: 100%;
+            margin-bottom: 1px;
+        }
+
+        html body {
+            height: 100%;
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: #000;
+            line-height: 140%;
+            background: #fff none;
+            overflow-y: scroll;
+        }
+
+        html body td {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        h1 {
+            padding: 0px;
+            margin: 0px 0px 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            color: #d55000;
+            line-height: 100%;
+            font-weight: normal;
+        }
+
+        h2 {
+            padding: 0px;
+            margin: 0px 0px 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            color: #000;
+            font-weight: bold;
+            line-height: 140%;
+            border-bottom: 1px solid #d6d4d4;
+            display: block;
+        }
+
+        h3 {
+            padding: 0px;
+            margin: 0px 0px 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+            color: #000;
+            font-weight: bold;
+            line-height: 140%;
+        }
+
+        a {
+            color: #005fce;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #005fce;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #004aa0;
+            text-decoration: none;
+        }
+
+        p {
+            padding: 0px;
+            margin: 0px 0px 20px;
+        }
+
+        img {
+            padding: 0px;
+            margin: 0px 0px 20px;
+            border: none;
+        }
+
+        p img,
+        pre img,
+        tt img,
+        li img,
+        h1 img,
+        h2 img {
+            margin-bottom: 0px;
+        }
+
+        ul {
+            padding: 0px;
+            margin: 0px 0px 20px 23px;
+            list-style: square;
+        }
+
+        ul li {
+            padding: 0px;
+            margin: 0px 0px 7px 0px;
+        }
+
+        ul li ul {
+            padding: 5px 0px 0px;
+            margin: 0px 0px 7px 23px;
+        }
+
+        ul li ol li {
+            list-style: decimal;
+        }
+
+        ol {
+            padding: 0px;
+            margin: 0px 0px 20px 0px;
+            list-style: decimal;
+        }
+
+        ol li {
+            padding: 0px;
+            margin: 0px 0px 7px 23px;
+            list-style-type: decimal;
+        }
+
+        ol li ol {
+            padding: 5px 0px 0px;
+            margin: 0px 0px 7px 0px;
+        }
+
+        ol li ol li {
+            list-style-type: lower-alpha;
+        }
+
+        ol li ul {
+            padding-top: 7px;
+        }
+
+        ol li ul li {
+            list-style: square;
+        }
+
+        .content {
+            font-size: 1.2em;
+            line-height: 140%;
+            padding: 20px;
+        }
+
+        pre,
+        code {
+            font-size: 12px;
+        }
+
+        tt {
+            font-size: 1.2em;
+        }
+
+        pre {
+            margin: 0px 0px 20px;
+        }
+
+        pre.codeinput {
+            padding: 10px;
+            border: 1px solid #d3d3d3;
+            background: #f7f7f7;
+        }
+
+        pre.codeoutput {
+            padding: 10px 11px;
+            margin: 0px 0px 20px;
+            color: #4c4c4c;
+        }
+
+        pre.error {
+            color: red;
+        }
+
+        @media print {
+
+            pre.codeinput,
+            pre.codeoutput {
+                word-wrap: break-word;
+                width: 100%;
+            }
+        }
+
+        span.keyword {
+            color: #0000FF
+        }
+
+        span.comment {
+            color: #228B22
+        }
+
+        span.string {
+            color: #A020F0
+        }
+
+        span.untermstring {
+            color: #B20000
+        }
+
+        span.syscmd {
+            color: #B28C00
+        }
+
+        span.typesection {
+            color: #A0522D
+        }
+
+        .footer {
+            width: auto;
+            padding: 10px 0px;
+            margin: 25px 0px 0px;
+            border-top: 1px dotted #878787;
+            font-size: 0.8em;
+            line-height: 140%;
+            font-style: italic;
+            color: #878787;
+            text-align: left;
+            float: none;
+        }
+
+        .footer p {
+            margin: 0px;
+        }
+
+        .footer a {
+            color: #878787;
+        }
+
+        .footer a:hover {
+            color: #878787;
+            text-decoration: underline;
+        }
+
+        .footer a:visited {
+            color: #878787;
+        }
+
+        table th {
+            padding: 7px 5px;
+            text-align: left;
+            vertical-align: middle;
+            border: 1px solid #d6d4d4;
+            font-weight: bold;
+        }
+
+        table td {
+            padding: 7px 5px;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #d6d4d4;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav">
+        <tr>
+            <td><img src="images/logo2.png" height="50" /></td>
+            <td width="100" align="center"><a href="index.html">主页</a></td>
+            <td width="100" align="center"><a href="resume.html">我的成果</a></td>
+            <td width="100" align="center"><a href="photo.html">我的相册</a></td>
+            <td width="100" align="center"><a href="Roll_call.html">随机点名</a></td>
+            <td width="100" align="center"><a href="course.html">我的课程</a></td>
+            <td width="100" align="center"><a href="tools.html">常用工具</a></td>
+        </tr>
+    </table>
+    <div class="content">
+        <!-- <h1>&#24352;&#23792;2022&#24180;06&#26376;18&#26085;&#32534;&#20889;</h1> -->
+        <h1>天蓝蓝&#24180;06&#26376;18&#26085;&#32534;&#20889;</h1>
+        <!--introduction-->
+        <!--/introduction-->
+        <h2>Contents</h2>
+        <div>
+            <ul>
+                <li><a href="#1">&#23454;&#39564;3
+                        &#32447;&#24615;&#31995;&#32479;&#30340;&#39057;&#29575;&#21709;&#24212;&#20998;&#26512;</a>
+                </li>
+                <li><a href="#2">&#32472;&#21046;&#24133;&#39057;&#29305;&#24615;</a></li>
+                <li><a href="#3">&#32472;&#21046;&#26102;&#22495;&#29305;&#24615;</a></li>
+            </ul>
+        </div>
+        <h2 id="1">&#23454;&#39564;3
+            &#32447;&#24615;&#31995;&#32479;&#30340;&#39057;&#29575;&#21709;&#24212;&#20998;&#26512;</h2>
+        <pre class="codeinput">
+clc
+clear
+close <span class="string">all</span>
+t=0:0.001:10;
+w=[1,2,5,8,10,12,15,20,50,100];
+
+num1=[100];
+den1=[1 10 100];
+        </pre>
+        <h2 id="2">&#32472;&#21046;&#24133;&#39057;&#29305;&#24615;</h2>
+        <pre class="codeinput">[magout,phase,w]=bode(num1,den1,w);
+figure
+subplot(2,1,1)
+semilogx(w,20*log10(magout),<span class="string">'ro'</span>,<span class="string">'Linewidth'</span>,2)
+title(<span class="string">'&#24133;&#39057;&#29305;&#24615;'</span>);
+xlim([0.01,1000])
+ylim([-60,60])
+xlabel(<span class="string">'rad/s'</span>);
+ylabel(<span class="string">'gain db'</span>);
+grid <span class="string">on</span>;
+subplot(2,1,2)
+semilogx(w,phase,<span class="string">'b*'</span>,<span class="string">'Linewidth'</span>,2)
+title(<span class="string">'&#30456;&#39057;&#29305;&#24615;'</span>);
+xlim([0.01,1000])
+ylim([-360,90])
+xlabel(<span class="string">'rad/s'</span>);
+ylabel(<span class="string">'gain db'</span>);
+grid <span class="string">on</span>;
+<span class="comment">% %% &#32472;&#21046;&#26497;&#22352;&#26631;&#22270;</span>
+figure
+center=[0 0];<span class="comment">%&#22278;&#24515;&#22352;&#26631;</span>
+<span class="keyword">for</span> i=1:length(magout)
+    x(i)=cos(phase(i)*pi/180).*magout(i)+center(1);
+    y(i)=sin(phase(i)*pi/180).*magout(i)+center(2);
+<span class="keyword">end</span>
+plot(x,y,<span class="string">'LineStyle'</span>,<span class="string">'none'</span>,<span class="string">'Marker'</span>,<span class="string">'.'</span>,<span class="string">'color'</span>,<span class="string">'r'</span>,<span class="string">'MarkerSize'</span>,30)
+title(<span class="string">'&#26497;&#22352;&#26631;&#22270;'</span>)
+<span class="comment">% hold on</span>
+<span class="comment">% for i=1:length(magout)</span>
+<span class="comment">%     str=strcat('w=',num2str(w(i)),'rad/s');</span>
+<span class="comment">%     text(x(i),y(i),str,'Color','k','FontSize',10);</span>
+<span class="comment">% end</span>
+xlim([-2,2])
+ylim([-2,2])
+set(gca,<span class="string">'FontSize'</span>,26)
+</pre><img vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_01.png" alt=""> <img vspace="5" hspace="5"
+            src="images/ex3_matlab/ex3_20210603V3_02.png" alt="">
+        <h2 id="3">&#32472;&#21046;&#26102;&#22495;&#29305;&#24615;</h2>
+        <pre class="codeinput">[magout,phase,w]=bode(num1,den1,w)
+sys1 = tf(num1,den1)
+<span class="keyword">for</span> i=1:length(w)
+    yin=3*sin(w(i)*t);
+    yout=lsim(sys1,yin,t);
+    Yout(i,:)=yout;
+    <span class="keyword">if</span> i&gt;5
+        figure
+        plot(t,yin,<span class="string">'r-'</span>,t,yout,<span class="string">'b-'</span>,<span class="string">'Linewidth'</span>,2)
+        legend(<span class="string">'&#36755;&#20837;&#20449;&#21495;'</span>,<span class="string">'&#36755;&#20986;&#20449;&#21495;'</span>)
+        str=strcat(<span class="string">'w='</span>,num2str(w(i)),<span class="string">'rad/s'</span>);
+        title(str)
+        xlim([0,1])
+        grid <span class="string">on</span>
+        set(gca,<span class="string">'FontSize'</span>,26)
+        set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.05,0.05,0.5,0.5]);
+    <span class="keyword">else</span>
+        figure
+        plot(t,yin,<span class="string">'r-'</span>,t,yout,<span class="string">'b-'</span>,<span class="string">'Linewidth'</span>,2)
+        legend(<span class="string">'&#36755;&#20837;&#20449;&#21495;'</span>,<span class="string">'&#36755;&#20986;&#20449;&#21495;'</span>)
+        grid <span class="string">on</span>
+        str=strcat(<span class="string">'w='</span>,num2str(w(i)),<span class="string">'rad/s'</span>);
+        title(str)
+        set(gca,<span class="string">'FontSize'</span>,26)
+        set(gcf,<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.05,0.05,0.5,0.5]);
+    <span class="keyword">end</span>
+
+<span class="keyword">end</span>
+</pre>
+        <pre class="codeoutput">
+magout =
+
+    1.0050
+    1.0198
+    1.1094
+    1.1399
+    1.0000
+    0.7824
+    0.5121
+    0.2774
+    0.0408
+    0.0100
+
+
+phase =
+
+   -5.7679
+  -11.7683
+  -33.6901
+  -65.7723
+  -90.0000
+ -110.1363
+ -129.8056
+ -146.3099
+ -168.2317
+ -174.2321
+
+
+w =
+
+     1
+     2
+     5
+     8
+    10
+    12
+    15
+    20
+    50
+   100
+
+
+sys1 =
+ 
+        100
+  ----------------
+  s^2 + 10 s + 100
+ 
+Continuous-time transfer function.
+
+</pre><img vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_03.png" alt=""> <img vspace="5" hspace="5"
+            src="images/ex3_matlab/ex3_20210603V3_04.png" alt=""> <img vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_05.png" alt=""> <img
+            vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_06.png" alt=""> <img vspace="5" hspace="5"
+            src="images/ex3_matlab/ex3_20210603V3_07.png" alt=""> <img vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_08.png" alt=""> <img
+            vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_09.png" alt=""> <img vspace="5" hspace="5"
+            src="images/ex3_matlab/ex3_20210603V3_10.png" alt=""> <img vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_11.png" alt=""> <img
+            vspace="5" hspace="5" src="images/ex3_matlab/ex3_20210603V3_12.png" alt="">
+        <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg;
+                R2021b</a><br></p>
+    </div>
+    <!--
+##### SOURCE BEGIN #####
+%% 2022年06月18日编写
+%% 实验3 线性系统的频率响应分析
+clc
+clear
+close all
+t=0:0.001:10;
+w=[1,2,5,8,10,12,15,20,50,100];
+
+num1=[100];
+den1=[1 10 100];
+%% 绘制幅频特性
+[magout,phase,w]=bode(num1,den1,w);
+figure
+subplot(2,1,1)
+semilogx(w,20*log10(magout),'ro','Linewidth',2) 
+title('幅频特性');
+xlim([0.01,1000])
+ylim([-60,60])
+xlabel('rad/s');
+ylabel('gain db');
+grid on;
+subplot(2,1,2)
+semilogx(w,phase,'b*','Linewidth',2) 
+title('相频特性');
+xlim([0.01,1000])
+ylim([-360,90])
+xlabel('rad/s');
+ylabel('gain db');
+grid on;
+% %% 绘制极坐标图
+figure
+center=[0 0];%圆心坐标
+for i=1:length(magout)
+    x(i)=cos(phase(i)*pi/180).*magout(i)+center(1);
+    y(i)=sin(phase(i)*pi/180).*magout(i)+center(2);
+end
+plot(x,y,'LineStyle','none','Marker','.','color','r','MarkerSize',30)
+title('极坐标图')
+% hold on
+% for i=1:length(magout)
+%     str=strcat('w=',num2str(w(i)),'rad/s');
+%     text(x(i),y(i),str,'Color','k','FontSize',10);
+% end
+xlim([-2,2])
+ylim([-2,2])
+set(gca,'FontSize',26)
+%% 绘制时域特性
+[magout,phase,w]=bode(num1,den1,w)
+sys1 = tf(num1,den1)
+for i=1:length(w)
+    yin=3*sin(w(i)*t);
+    yout=lsim(sys1,yin,t);
+    Yout(i,:)=yout;
+    if i>5
+        figure       
+        plot(t,yin,'r-',t,yout,'b-','Linewidth',2)
+        legend('输入信号','输出信号')
+        str=strcat('w=',num2str(w(i)),'rad/s');
+        title(str)
+        xlim([0,1])
+        grid on
+        set(gca,'FontSize',26)
+        set(gcf,'unit','normalized','position',[0.05,0.05,0.5,0.5]);
+    else
+        figure
+        plot(t,yin,'r-',t,yout,'b-','Linewidth',2)
+        legend('输入信号','输出信号')
+        grid on
+        str=strcat('w=',num2str(w(i)),'rad/s');
+        title(str)
+        set(gca,'FontSize',26)
+        set(gcf,'unit','normalized','position',[0.05,0.05,0.5,0.5]);
+    end
+    
+end
+
+
+
+##### SOURCE END #####
+-->
+</body>
+
+</html>

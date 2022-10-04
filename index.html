@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>我的驿站</title>
+  <link href="css/css.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="normalize.min.css">
+  <script src="prefixfree.min.js"></script>
+  <style type="text/css">
+
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="stars"></div>
+    <div class='ribbon'>
+      <a href='./index.html'><span>主页</span></a>
+      <a href='./resume.html'><span>我的成果</span></a>
+      <a href='./photo.html'><span>我的相册</span></a>
+      <a href='./Roll_call.html'><span>随机点名</span></a>
+      <a href='./course.html'><span>我的课程</span></a>
+      <a href='./tools.html'><span>常用工具</span></a>
+    </div>
+  </div>
+
+  <!-- <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav">
+    <tr>
+      <td><img src="images/logo2.png" height="100" /></td>
+      <td width="100" align="center"><a href="index.html">主页</a></td>
+      <td width="100" align="center"><a href="resume.html">我的成果</a></td>
+      <td width="100" align="center"><a href="photo.html">我的相册</a></td>
+      <td width="100" align="center"><a href="Roll_call.html">随机点名</a></td>
+      <td width="100" align="center"><a href="course.html">我的课程</a></td>
+      <td width="100" align="center"><a href="tools.html">常用工具</a></td>
+    </tr>
+  </table> -->
+
+  <table width="800" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <table width="760" border="0" cellspacing="50" cellpadding="0">
+          <tr>
+            <td>
+              <p>我的个人简介。 </p>
+              <p>昵称：天蓝蓝</p>
+              <p>
+              <p>学历：博士</p>
+              <p>入职时间：2021年</p>
+              <p>爱好：跑步，乒乓球，学习，王者荣耀</p>
+              <p>右边是我的QQ二维码&#8212;&#8212;</p>
+            </td>
+            <td><img src="images/qq_qr.png" width="280" height="400" /></td>
+          </tr>
+          <tr>
+            <td><img src="images/wchart_qr.jpg" width="280" height="400" /></td>
+            <td>
+              <p>&#8212;&#8212你看左边是我的微信二维码</p>
+              <br>
+              <p>微机原理这门课很抽象，课后一定要好好学习！</p>
+              <p>进制转换是基础 </p>
+              <p>寻址方式是延伸 </p>
+              <p>汇编语言是拓展 </p>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>课堂中听不懂的，可以多去b站上看看视频 </p>
+              <p>课后也可以问我 </p>
+              <p>有条件的同学，可以买开发板实战！ </p>
+              <p>综上所述，大家要好好学习，共同进步！ </p>
+            </td>
+            <td><img src="images/3.jpg" width="400" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <div>
+    <audio autoplay="autoplay" id="audio" loop="loop" preload="auto" controls="pausebutton">
+      <!--面板设置-->
+      <source src="./mp3/大鱼.mp3" type="audio/MP3">
+      <!--内容设置-->
+    </audio>
+    <img class="music_img" src="./mp3/大鱼.jpg" alt="">
+  </div>
+</body>
+<script>
+  let mucics = document.getElementById('audio')
+  document.body.addEventListener('mousemove', function () {
+    setTimeout(() => {
+      mucics.play();
+    }, 2000);
+  }, false);
+</script>
+
+</html>
